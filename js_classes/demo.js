@@ -1,16 +1,27 @@
+const person = {
+    name: "Alexander Kumanov",
+    age: 30,
+    position: "Fullstack Developer"
 
-class Person {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
+    
+}
 
-    sayHello() {
-        return `Hello, my name is ${this.name}`
-    }
-};
+console.log(person)
 
-const person1 = new Person("Alexander", 30);
-person1.height = 185
-console.log(person1)
-console.log(person1.sayHello())
+for (let key in person) {
+    console.log(`Key: ${key}, Value: ${person[key]}`)
+}
+
+
+const keys = Object.keys(person)    
+console.log(keys)
+
+const values = Object.values(person)
+console.log(values)
+
+const entries = Object.entries(person)
+console.log(entries)
+
+for (let index in entries) {
+    console.log(index)
+}
