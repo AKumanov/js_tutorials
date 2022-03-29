@@ -17,10 +17,34 @@
 let isRunnig = true;
 const stopper = 5
 
-while (isRunnig) {
-    console.log('Running..');
-    if (stopper == 3) {
-        isRunnig = false;
+console.log('while loop ended..');
+
+
+// Constructor Function
+function BellBoy(name, age, hasWorkPermit, languages) {
+    this.name = name;
+    this.age = age;
+    this.hasWorkPermit = hasWorkPermit;
+    this.languages = languages;
+}
+
+let temp1 = new BellBoy('Test', 30, true, ['English', 'Russan']);
+console.log(temp1.name)
+console.log(temp1.languages)
+
+class BuzzBoy {
+    constructor(name, age, hasWorkPermit, languages) {
+        this.name = name;
+        this.age = age;
+        this.hasWorkPermit = hasWorkPermit;
+        this.languages = languages;
+    }
+
+    toString() {
+        return `This is ${this.name}. He knows ${this.languages.length} different languages`
     }
 }
-console.log('while loop ended..');
+
+let buzzBoy = new BuzzBoy('Test', 30, true, ['English', 'German', 'Belgian'])
+
+console.log(buzzBoy.toString());
