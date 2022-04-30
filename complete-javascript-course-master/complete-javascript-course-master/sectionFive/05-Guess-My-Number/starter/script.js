@@ -10,18 +10,24 @@ const paragraph = document.querySelector('.message');
 const againBtn = document.querySelector('.again');
 const docHighScore = document.querySelector('.highscore');
 const finalNumber  = document.querySelector('.number');
-const highscore = [];
 
 
 let body = document.body;
-const number = getSecretNumber();
-console.log(number);
+let number = getSecretNumber();
 
 againBtn.addEventListener('click', () => {
-    location.reload();
+    let score = document.querySelector('.score');
+    if (Number(score.textContent > Number(docHighScore.textContent))) {
+        docHighScore.textContent = score.textContent;;
+    }
+    score.textContent = 20;
+    number = getSecretNumber();
+    body.style.backgroundColor = '#222';
+    inputNumber.value = '';
 })
 checkBtn.addEventListener('click', (e) => {
 
+    
     if (Number(inputNumber.value) < 1 || Number(inputNumber.value) > 20) {
         paragraph.textContent = 'Please enter a number between 1 and 20';
         return;
@@ -29,19 +35,32 @@ checkBtn.addEventListener('click', (e) => {
     console.log(`Secret number: ${number}`)
 
     if (Number(inputNumber.value) > number) {
+        if (checkGameOver(Number(document.querySelector('.score').textContent))) {
         paragraph.textContent = 'Too high';
         updateScore();
+    } else {
+        paragraph.textContent = 'You lost';
+        document.querySelector('.score').textContent = 0;
+    }
     } else if (Number(inputNumber.value) < number) {
-        paragraph.textContent = 'Too low';
-        updateScore();
+        if (checkGameOver(Number(document.querySelector('.score').textContent))) {
+            paragraph.textContent = 'Too low';
+            updateScore();
+        } else {
+            paragraph.textContent = 'You lost';
+            document.querySelector('.score').textContent = 0;
+        }
     } else {
         paragraph.textContent = 'Congratulations';
-        body.style.backgroundColor = 'green';
-        let score = document.querySelector('.score');
+        body.style.backgroundColor = '#60b347';
+        document.querySelector('.number').style.width = '30rem';
         finalNumber.textContent = number;
-        highscore.push(Number(score.textContent));
     }
 })
+
+function checkGameOver(score) {
+    return (score > 1);
+}
 
 function updateScore() {
     let score = document.querySelector('.score');
@@ -49,5 +68,3 @@ function updateScore() {
     currentScore -=1;
     score.textContent = currentScore;
 }
-console.log(checkBtn);
-console.log(inputNumber);
