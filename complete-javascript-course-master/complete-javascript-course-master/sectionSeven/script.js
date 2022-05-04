@@ -47,6 +47,8 @@ holdBtn.addEventListener('click', () => {
         } else {
             players[1].classList.add('player--winner');
         }
+        rollBtn.style.display = 'none';
+        holdBtn.style.display = 'none';
     }
 })
 
@@ -85,6 +87,9 @@ rollBtn.addEventListener('click', () => {
         } else {
             players[1].classList.add('player--winner');
         }
+
+        rollBtn.style.display = 'none';
+        holdBtn.style.display = 'none';
     }
 
 })
