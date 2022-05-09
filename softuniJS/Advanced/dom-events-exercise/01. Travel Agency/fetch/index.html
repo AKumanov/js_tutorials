@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="clickBtn">Load Content</button>
+    <div id="root"></div>
+
+    <script>
+        const button = document.querySelector('.clickBtn');
+        let resElement = document.getElementById('root');
+        let url = 'http://demo.econt.com/ee/services/';
+        button.addEventListener('click', () => {
+            fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Content-type': 'application/json',
+                    'username': 'iasp-dev',
+                    'password': 'iasp-dev',
+                    'Access-Control-Allow-Origin': '*',
+                },
+                
+            })
+                .then(response => {
+                    response.json();
+                    console.log(response);
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+        })
+    </script>
+</body>
+</html>
