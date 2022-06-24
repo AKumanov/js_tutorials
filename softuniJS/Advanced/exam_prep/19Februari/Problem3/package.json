@@ -1,0 +1,16 @@
+{
+  "name": "problem3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "flowerShop.js",
+  "scripts": {
+    "test": "nyc --reporter=text mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "nyc": "^15.1.0"
+  }
+}
