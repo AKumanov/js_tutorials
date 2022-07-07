@@ -65,7 +65,7 @@ function attachEvents() {
 
         const degreeSpan = document.createElement('span');
         degreeSpan.classList.add('forecast-data');
-        degreeSpan.textContent = `${dataTwo.forecast.low}/${dataTwo.forecast.high}`;
+        degreeSpan.textContent = `${dataTwo.forecast.low}°/${dataTwo.forecast.high}°`;
 
         const forecastSpan = document.createElement('span');
         forecastSpan.classList.add('forecast-data');
@@ -99,7 +99,7 @@ function attachEvents() {
 
             const futureDegreeSpan = document.createElement('span');
             futureDegreeSpan.classList.add('forecast-data');
-            futureDegreeSpan.textContent = `${current.low}/${current.high}`;
+            futureDegreeSpan.textContent = `${current.low}°/${current.high}°`;
 
             const futureConditionSpan = document.createElement('span');
             futureConditionSpan.classList.add('forecast-data');
