@@ -1,0 +1,26 @@
+windows_user = {
+    'username': admin,
+    'password': P@ssw0rd,
+};
+google_user = {
+    'username': aleksander.kumanov@dentaprime.com,
+    'password': 9012095626#Method,
+};
+# same function as windows_user
+domain = {
+    'user':'alexander.kumanov',
+    'password': Dentaprime.com1234,
+};
+workflow = {
+    'username': AKumanov,
+    'password': Kum*900,
+};
+salesForce = {
+    'username': aleksander.kumanov@dentaprime.com,
+    'password': 901209Method,
+};
+hrSandbox = {
+    'username': aleksander.kumanov@dentaprime.com,
+    'password': 901209Method,
+};
+
